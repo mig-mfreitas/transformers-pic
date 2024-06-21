@@ -411,7 +411,7 @@ class LlamaAttention(nn.Module):
             scaling_factor = self.config.rope_scaling["factor"]
             # Yarn parameters
             kwargs = {
-                "dim": self.config.rope_scaling.get("original_max_position_embeddings", None),
+                # "dim": self.config.rope_scaling.get("original_max_position_embeddings", None),
                 "max_position_embeddings": self.config.rope_scaling.get("attention_factor", None),
                 "base": self.config.rope_scaling.get("beta_fast", None),
                 "scaling_factor": self.config.rope_scaling.get("beta_slow", None),
