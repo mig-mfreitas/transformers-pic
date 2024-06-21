@@ -221,7 +221,7 @@ class LlamaConfig(PretrainedConfig):
             raise ValueError(
                 f"`rope_scaling`'s original_max_position_embeddings field must be an int, got {original_max_position_embeddings}"
             )
-        if attention_factor is not None and not isinstance(attention_factor, float) or attention_factor < 0:
+        if attention_factor is not None and (not isinstance(attention_factor, float) or attention_factor < 0):
             raise ValueError(
                 f"`rope_scaling`'s attention_factor field must be a float greater than 0, got {attention_factor}"
             )
